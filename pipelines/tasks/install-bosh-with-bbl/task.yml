@@ -6,7 +6,6 @@ image_resource:
   source:
     repository: cloudtechie/pcfclis
 inputs:
-  - name: aws_access_json
   - name: pcf-tools
 outputs:
   - name: bbl-env
