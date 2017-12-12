@@ -1,0 +1,19 @@
+resources:
+- name: pcfclis
+  type: docker-image
+  source:
+    repository: cloudtechie/pcfclis
+    tag: latest
+
+jobs:
+- name: create-iam-user
+  serial_groups: [iaas]
+  plan:
+  - get: pcfclis
+  - task: create-iam-user
+    params:
+      AWS_IAM_USER_NAME: {{aws_iam_user_name}}
+      AWS_REGION: {{aws_region}}
+      AWS_ACCESS_KEY_ID: {{aws_access_key_id}}
+      AWS_SECRET_ACCESS_KEY: {{aws_secret_access_key}}
+    file: tasks/create-iam-user/task.yml
