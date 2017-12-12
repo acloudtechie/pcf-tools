@@ -7,7 +7,6 @@ resources:
     private_key: {{git_private_key}}
 jobs:
 - name: create-iam-user
-  serial_groups: [iaas]
   plan:
   - get: pcf-tools
   - task: create-iam-user
@@ -17,6 +16,9 @@ jobs:
       aws_access_key_id: {{aws_access_key_id}}
       aws_secret_access_key: {{aws_secret_access_key}}
     file: pcf-tools/pipelines/tasks/create-iam-user/task.yml
+- name: install-bosh-with-bbl
+  plan:
+  - get: pcf-tools
   - task: install-bosh-with-bbl
     params:
       aws_region: {{aws_region}}
