@@ -38,5 +38,5 @@ EOF
         --policy-name "bbl-policy" \
         --policy-document "$bbl_policy_json"
   #mkdir aws_output && cd aws_output
-  aws iam create-access-key --user-name "$aws_iam_user_name" > aws_output/aws_access
+  aws_access_json = $(aws iam create-access-key --user-name "$aws_iam_user_name")
 fi
