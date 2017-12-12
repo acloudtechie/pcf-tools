@@ -5,8 +5,10 @@ image_resource:
   type: docker-image
   source:
     repository: cloudtechie/pcfclis
+inputs:
+  - name: pcf-tools
 outputs:
-  - name: bbl-output
+  - name: aws-output
 params:
   aws_access_key_id:
   aws_secret_access_key:
