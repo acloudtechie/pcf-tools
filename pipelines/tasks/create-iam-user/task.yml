@@ -13,4 +13,4 @@ params:
   aws_region:
   aws_iam_user_name:
 run:
-  path: tasks/install-bosh/task.sh
+  path: pcf-tools/pipelines/tasks/create-iam-user/task.sh

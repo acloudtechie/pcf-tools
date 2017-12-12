@@ -13,4 +13,4 @@ params:
   aws_region:
   aws_iam_user_name:
 run:
-  path: tasks/install-bosh-with-bbl/task.sh
+  path: pcf-tools/pipelines/tasks/install-bosh-with-bbl/task.sh
